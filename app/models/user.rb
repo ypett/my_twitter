@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tweets
+  serialize :following, Array
 
   validates :username, presence: true, uniqueness: true
 

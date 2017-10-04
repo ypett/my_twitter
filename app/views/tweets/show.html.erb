@@ -7,7 +7,8 @@
 
 <p>
   <strong>User:</strong>
-  <%= @tweet.user_id %>
+  <%#= @tweet.user_id %>
+  <%= link_to @tweet.user.username, show_user_path(id: @tweet.user_id) %>
 </p>
 
 <%= link_to 'Edit', edit_tweet_path(@tweet), class: 'btn btn-primary' %>

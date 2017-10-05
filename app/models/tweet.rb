@@ -4,9 +4,11 @@ class Tweet < ApplicationRecord
   has_many :tweet_tags
   has_many :tweets, through: :tweet_tags
 
-  before_validation :link_check
+  before_validation :link_check, on: :create
 
-  validates :message, presence: true, length: { maximum: 140, too_long: "A tweet is only 140 characters max." }
+  validates :message, presence: true, length: { maximum: 140, too_long: "A tweet is only 140 characters max." }, on: :create
+
+  after_validation :apply_link, on: :create
 
   private
 
@@ -33,7 +35,7 @@ class Tweet < ApplicationRecord
     index = array.map { |word| word.include? "http://" }.index(true)
     url = array[index]
 
-    array[index] = "<a href='#{self.link}' target = '_blank'#{url}</a>"
+    array[index] = "<a href='#{self.link}' target='_blank'>#{url}</a>"
 
     self.message = array.join(" ")
   end

@@ -8,7 +8,9 @@
               <div class="thumbnail" style="height: 242px; width: 300px;">
 
                   <p><%= tweet.message.html_safe %></p>
-                  <p>Created by: <%= link_to tweet.user.username, show_user_path(id: tweet.user_id) %></p>
+                  <p>Created by: <%= link_to tweet.user.username, show_user_path(id: tweet.user_id) %>
+                    <%= time_ago_in_words(tweet.created_at, include_seconds: true) %> ago
+                  </p>
 
                   <div class="caption" style="text-align: center; position: absolute; bottom: 20px; left: 60px;">
                     <%= link_to 'Show', tweet, class: 'btn btn-info' %>

@@ -1,5 +1,5 @@
 
-  <div style="text-align: center;">
+  <div class="text-center">
     <h1><%= current_user.username %>'s Twitter Feed</h1>
     <hr>
     <p>Here is what your "friends" are saying:</p>
@@ -10,8 +10,6 @@
       <div class="col-md-6 col-md-offset-4
                   col-sm-8 col-md-offset-2
                   col-xs-10 col-xs-offset-1">
-
-
 
         <div>
           <% @following_tweets.each do |tweet| %>

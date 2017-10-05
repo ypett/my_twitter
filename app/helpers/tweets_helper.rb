@@ -15,7 +15,7 @@ module TweetsHelper
           tag = Tag.create(phrase: word)
         end
 
-        tweet_tag = TweetTag.create(tweet_id: tweet_id, tag_id: tag.id)
+        tweet_tag = TweetTag.create(tweet_id: tweet.id, tag_id: tag.id)
 
         message_array[index] = "<a href='/tag_tweets?id=#{tag.id}'>#{word}</a>"
 

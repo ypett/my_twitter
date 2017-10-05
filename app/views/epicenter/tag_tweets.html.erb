@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="text-center">
+    <h1><%= @tag.phrase %></h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <% @tag.tweets.each do |tweet| %>
+        <p>
+          <%= tweet.user.name %><%= "@#{tweet.user.username}" %> - <%= time_ago_in_words(tweet.created_at) %> ago
+        </p>
+
+        <p>
+          <%= tweet.message.html_safe %>
+        </p>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>
+
+

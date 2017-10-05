@@ -1,7 +1,18 @@
-<h1>Editing Tweet</h1>
+<div class="container-fluid" style="font-family: 'Raleway', 'sans-serif'; font-size: 16px;">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-5
+                  col-sm-8 col-md-offset-2
+                  col-xs-10 col-xs-offset-1">
 
-<%= render 'form', tweet: @tweet %>
 
-<br>
-<%= link_to 'Show', @tweet, class: 'btn btn-primary' %>
-<%= link_to 'Back', tweets_path, class: 'btn btn-primary' %>
+        <h1>Editing Tweet</h1>
+
+        <%= render 'form', tweet: @tweet %>
+
+        <br>
+        <%= link_to 'Show', @tweet, class: 'btn btn-primary' %>
+        <%= link_to 'Back', tweets_path, class: 'btn btn-primary' %>
+
+      </div>
+    </div>
+</div>

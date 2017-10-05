@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="margin-bottom: 0;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -13,17 +13,25 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      <li><%= link_to "Tweets", tweets_path %></li>
+        <li><%= link_to "Featured", tweets_path %></li>
+        <% if current_user %>
+          <li><%= link_to "My Feed", root_path %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
+          <li><p class="navbar-text">Welcome back, <%= current_user.username %>!</p></li>
           <% if current_user.avatar.url %>
-            <li><%= image_tag current_user.avatar.url, style: 'width: 60px;' %></li>
+            <li><%= image_tag current_user.avatar.url, style: 'height: 50px;' %></li>
           <% end %>
           <li><%= link_to "Update Profile", edit_user_registration_path, class: 'btn btn-info' %></li>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-default' %>
           </li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-info' %></li>
+          <li><%= link_to "Log In", user_session_path, class: 'btn btn-success' %></li>
         <% end %>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

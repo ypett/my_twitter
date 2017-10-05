@@ -1,88 +1,15 @@
 
-<div class="jumbotron" style="padding-top: 0; padding-bottom: 0; margin-bottom: 0;">
-  <div style="color: white;
-              background-image: url('https://pixabay.com/get/eb34b60f2cf6073ed1584d05fb0938c9bd22ffd41cb1164193f4c071a6/twitter-2170426_1280.png');
-              background-size: cover;
-              background-position: center;
-              height: 200px;
-              padding: 20px;">
-      <p id="notice"><%= notice %></p>
-      <div class="pull-left" style="padding-left: 50px;">
-        <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-      </div>
-      <br>
-      <div style="text-align: center; width: 100%;">
-          <h2>What's Happening?</h2>
-      </div>
-  </div>
-</div>
+<%#= render 'tweets/header' %>
+<%#= render 'tweets/navbar' %>
+<%#= render 'tweets/livefeed' %>
+<%= render 'tweets/featured' %>
 
-    <nav class="navbar navbar-default" style="padding-top: 0; padding-bottom: 0;">
-      <div class="container">
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav" style="width: 100%; text-align: center; font-size: large; font-weight: bold;">
-              <li style="float: none; display: inline-block;"><i class="fa fa-search" aria-hidden="true"></i></li>
-              <li style="float: none; display: inline-block;" class="active"><a href="#">Featured</a></li>
-              <li style="float: none; display: inline-block;"><a href="#">Sports</a></li>
-              <li style="float: none; display: inline-block;"><a href="#">News</a></li>
-              <li style="float: none; display: inline-block;"><a href="#">Music</a></li>
-              <li style="float: none; display: inline-block;"><a href="#">Entertainment</a></li>
-              <li style="float: none; display: inline-block;"><a href="#">Lifestyle</a></li>
-              <li class="dropdown" style="float: none; display: inline-block;">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Arts & Culture</a></li>
-                  <li><a href="#">Government & Politics</a></li>
-                  <li><a href="#">Gaming</a></li>
-                  <li><a href="#">Nonprofits</a></li>
-                  <li><a href="#">Fun</a></li>
-                  <li><a href="#">Science</a></li>
-                  <li><a href="#">Technology</a></li>
-                </ul>
-              </li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container -->
-    </nav>
-
-    <div class="col-md-8" style="padding-left: 120px;">
-      <h4>Live video</h4>
-    </div>
-
-    <div class="container-fluid" style="padding: 0 100px 0 100px;">
-      <div class="col">
-        <div class="col-md-9">
-          <iframe style="width: 100%; height: 300px; border-radius: 10px;"
-            src="https://www.youtube.com/embed/m1i93VRK_RM">
-          </iframe>
-        </div>
-        <div class="col-md-3" style="background-color: rgb(255, 100, 0);
-                                    border-radius: 10px;
-                                    text-align: center;
-                                    height: 300px;
-                                    color: white;
-                                    line-height: 20px;">
-          <div style="margin-top: 70px;">
-            <h3>New to Twitter?</h3>
-          </div>
-          <div style="font-size: 14px; letter-spacing: .5px;">
-            <p>Sign up now to get your own personalized timeline!</p>
-          </div>
-          <div>
-
-          </div>
-            <a href="https://twitter.com/signup"><button type="button" class="btn btn-default">Sign Up</button></a>
-          </div>
-        </div>
-      </div>
-    </div>
 
 <!-- All from here is original -->
 <!-- <p id="notice"><%= notice %></p> -->
 <!-- <h1>Tweets</h1> -->
 
+<h2 style="text-align: center;">Table of Tweets</h2>
 <div class="panel panel-default" style="padding-left: 20px; padding-right: 20px; padding-top: 20px;">
   <!-- Default panel contents -->
   <div class="panel-heading">
@@ -115,62 +42,4 @@
 
 <%= link_to 'New Tweet', new_tweet_path, class: 'btn btn-primary' %>
 
-</div>
-
-  <div class="container-fluid" style="padding-top: 10px; width: 100%; text-align: center; font-size: x-small;">
-    <div class="footer">
-      <ul>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">About</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Blog</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Help Center</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Status</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Jobs</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Terms</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Privacy Policy</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Cookies</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Ads info</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Brand</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Apps</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Advertise</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Businesses</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Developers</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Directory</a>
-        </li>
-        <li style="display: inline-block; padding: 0 9px 0 9px; text-align: inherit;">
-          <a href="#">Settings</a>
-        </li>
-
-      </ul>
-
-    </div>
-    <a href="#">&copy;2017 Twitter</a>
-  </div>
+<%#= render 'tweets/footer' %>

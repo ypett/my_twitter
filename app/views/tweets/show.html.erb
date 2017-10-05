@@ -1,15 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid" style="font-family: 'Raleway', 'sans-serif'; font-size: 16px;">
+    <div class="row">
+      <div style="text-align: center;">
 
-<p>
-  <strong>Message:</strong>
-  <%= @tweet.message %>
-</p>
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%#= @tweet.user_id %>
-  <%= link_to @tweet.user.username, show_user_path(id: @tweet.user_id) %>
-</p>
+        <h1>View or Update Tweet</h1>
+        <p>
+          <strong>Message:</strong>
+          <%= @tweet.message %>
+        </p>
 
-<%= link_to 'Edit', edit_tweet_path(@tweet), class: 'btn btn-primary' %>
-<%= link_to 'Back', tweets_path, class: 'btn btn-primary' %>
+        <p>
+          <strong>Created: </strong>
+          <%= time_ago_in_words(@tweet.created_at, include_seconds: true) %> ago
+        </p>
+
+        <p>
+          <strong>User:</strong>
+          <%#= @tweet.user_id %>
+          <%= link_to @tweet.user.username, show_user_path(id: @tweet.user_id) %>
+        </p>
+
+        <%= link_to 'Edit', edit_tweet_path(@tweet), class: 'btn btn-primary' %>
+        <%= link_to 'Back', tweets_path, class: 'btn btn-primary' %>
+
+      </div>
+    </div>
+</div>

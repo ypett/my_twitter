@@ -33,10 +33,11 @@ class Tweet < ApplicationRecord
     array = self.message.split
 
     index = array.map { |word| word.include? "http://" }.index(true)
-    url = array[index]
+    url = array[index] unless index.nil?
 
-    array[index] = "<a href='#{self.link}' target='_blank'>#{url}</a>"
-
+    unless index.nil?
+      array[index] = "<a href='#{self.link}' target='_blank'>#{url}</a>"
+    end
     self.message = array.join(" ")
   end
 end

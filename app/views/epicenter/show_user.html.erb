@@ -3,17 +3,35 @@
       <div style="text-align: center;">
         <h1>@<%= @user.username %>'s Profile & Tweets</h1>
 
-        <p><%= @user.name %></p>
-        <p><%= @user.location %></p>
-        <p><%= @user.bio %></p>
+        <p>Name: <%= @user.name %></p>
 
+        <% if !@user.location.empty? %>
+          <p>Location: <%= @user.location %></p>
+        <% end %>
+        <% if !@user.bio.empty? %>
+          <p>Bio: <%= @user.bio %></p>
+        <% end %>
+
+        <button class="btn btn-info" type="button">Tweets <span class="badge"><%= Tweet.all.where(:user_id => @user.id).count %></span></button>
+
+        <button class="btn btn-info" type="button">Following <span class="badge"><%= link_to User.find_by_id(@user.id).following.count, following_path(id: @user.id) %></span></button>
+
+        <% follower_cnt = 0 %>
+        <% User.all.each do |x| %>
+        <%  if x.following.include?("id" => @user.id.to_s) %>
+                <% follower_cnt += 1 %>
+            <% end %>
+        <% end %>
+        <button class="btn btn-info" type="button">Followers <span class="badge"><%= link_to follower_cnt, followers_path(id: @user.id) %></span></button>
+        <br>
+        <br>
         <p>
-            <% if current_user.following.include?(@user.id) %>
-                <%= link_to "Unfollow", unfollow_path(id: @user.id), class: "btn btn-danger" %>
+            <% if current_user.following.include?("id" => @user.id.to_s) %>
+                <%= link_to "Following", unfollow_path(id: @user.id), class: "btn btn-primary", id: 'unfollow_btn' %>
             <% else %>
                 <% if current_user.id != @user.id %>
-                <%= link_to "Follow", now_following_path(id: @user.id), class: "btn btn-info" %>
-            <% end %>
+                    <%= link_to "Follow", now_following_path(id: @user.id), class: "btn btn-info" %>
+                <% end %>
             <% end %>
         </p>
 
